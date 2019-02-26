@@ -48,7 +48,7 @@ export default class Node {
      * it returns true if this node is a left child
      */
     ifRightChild() {
-
+        return this.parent.rightChild == this.rightChild;
     }
 
     /**
