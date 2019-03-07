@@ -16,14 +16,11 @@ keys.forEach(function (key) {
   return tree.otherAdd(key);
 });
 
-/**/
-//console.log(tree);
-
 //-- Percusos
 //tree.preOrder(printMenu);
-//tree.inOrder();
+//tree.inOrder(printMenu);
 //tree.posOrder(printMenu);
 
 //-- Largura
-tree.ifLeaf();
+tree.breadthSearchFirst(_transversalOperations.printMenu);
 //# sourceMappingURL=app.js.map
