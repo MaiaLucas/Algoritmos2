@@ -77,9 +77,7 @@ var Node = function () {
 
     }, {
         key: "ifRightChild",
-        value: function ifRightChild() {
-            return this.parent.rightChild == this.rightChild;
-        }
+        value: function ifRightChild() {}
 
         /**
          * It returns true if this node has a left child
