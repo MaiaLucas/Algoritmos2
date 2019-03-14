@@ -10,56 +10,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var Node = function () {
     function Node(key) {
-        var parent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-
         _classCallCheck(this, Node);
 
         this.key = key;
-        this.parent = parent;
+        this.parent = null;
         this.leftChild = null;
         this.rightChild = null;
     }
 
     _createClass(Node, [{
         key: "isLeaf",
-        value: function isLeaf() {
-            return this.leftChild == null && this.rightChild == null;
+        value: function isLeaf(node) {
+            return node.leftChild == null && node.rightChild == null;
         }
     }, {
         key: "hasBothChildren",
-        value: function hasBothChildren() {
-            return this.leftChild !== null && this.rightChild !== null;
+        value: function hasBothChildren(node) {
+            return node.leftChild !== null && node.rightChild !== null;
         }
     }, {
         key: "isLeftChild",
-        value: function isLeftChild() {
-            return this.parent.leftChild === this;
+        value: function isLeftChild(node) {
+            return node.parent > node.key;
         }
     }, {
         key: "isRightChild",
-        value: function isRightChild() {
-            return this.parent.rightChild === this;
+        value: function isRightChild(node) {
+            return node.parent < node.key;
         }
     }, {
         key: "hasLeftChild",
-        value: function hasLeftChild() {
-            return this.leftChild !== null;
+        value: function hasLeftChild(node) {
+            return node.leftChild !== null;
         }
     }, {
         key: "hasRightChild",
-        value: function hasRightChild() {
-            return this.rightChild !== null;
-        }
-    }, {
-        key: "isRoot",
-        value: function isRoot() {
-            return this.parent == null;
-        }
-    }, {
-        key: "depth",
-        value: function depth() {
-            if (this.isRoot()) return 0;
-            return 1 + this.parent.depth();
+        value: function hasRightChild(node) {
+            return node.rightChild !== null;
         }
     }]);
 
@@ -67,4 +54,4 @@ var Node = function () {
 }();
 
 exports.default = Node;
-//# sourceMappingURL=node.js.map
+//# sourceMappingURL=node.1.js.map
