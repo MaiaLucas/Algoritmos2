@@ -1,16 +1,22 @@
 import Tree from './components/tree/binarySearchTree';
-import { printKey, printMenu } from './util/transversalOperations';
+import { printKey, printMenuKey } from './util/transversalOperations';
+
+let keys = [13, 10, 40, 34, 20, 8, 11, 7]
 
 let tree = new Tree();
-//tree.add(13);
-let keys = [ 13, 10, 40, 34, 20, 8, 11, 7 ];
 
-keys.forEach(key => tree.otherAdd(key) );
+keys.forEach(key => tree.otherAdd(key));
 
-//-- Percusos
-//tree.preOrder(printMenu);
-//tree.inOrder(printMenu);
-//tree.posOrder(printMenu);
+// tree.preOrder(printMenuKey);
 
-//-- Largura
-tree.breadthSearchFirst(printMenu)
+// tree.remove(8)
+// console.log('   ')
+
+// tree.preOrder(printMenuKey);
+
+//tree.inOrder(printKey);
+
+let min = tree.minimum()
+let max = tree.maximum()
+
+console.log( `Minimo = ${min.key} Maximo = ${max.key}` )
