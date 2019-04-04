@@ -130,7 +130,10 @@ export default class BinarySearchTree {
                 found.parent = null;
             } else if (found.hasBothChildren()) {
             /*Menor impacto possível, a maior/menor raiz da menor/maior subarvore */
-
+                let substitute = this.minimumNode(found.rightChild);
+                this.remove(substitute.key);
+                found.key = substitute.key;
+                    
             } else {
                 if (found.isLeftChild()) {
                     if (found.hasLeftChild()) {

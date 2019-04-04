@@ -7,16 +7,10 @@ let tree = new Tree();
 
 keys.forEach(key => tree.otherAdd(key));
 
-// tree.preOrder(printMenuKey);
-
-// tree.remove(8)
-// console.log('   ')
-
-// tree.preOrder(printMenuKey);
-
-//tree.inOrder(printKey);
-
-let min = tree.minimum()
-let max = tree.maximum()
-
-console.log( `Minimo = ${min.key} Maximo = ${max.key}` )
+tree.preOrder(printMenuKey)
+console.log('---------')
+tree.remove(13)
+tree.preOrder(printMenuKey)
+console.log('---------')
+tree.remove(20)
+tree.preOrder(printMenuKey)

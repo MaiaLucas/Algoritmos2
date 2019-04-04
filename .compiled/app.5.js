@@ -16,11 +16,17 @@ keys.forEach(function (key) {
   return tree.otherAdd(key);
 });
 
-tree.preOrder(_transversalOperations.printMenuKey);
-console.log('---------');
-tree.remove(13);
-tree.preOrder(_transversalOperations.printMenuKey);
-console.log('---------');
-tree.remove(20);
-tree.preOrder(_transversalOperations.printMenuKey);
-//# sourceMappingURL=app.js.map
+// tree.preOrder(printMenuKey);
+
+// tree.remove(8)
+// console.log('   ')
+
+// tree.preOrder(printMenuKey);
+
+//tree.inOrder(printKey);
+
+var min = tree.minimum();
+var max = tree.maximum();
+
+console.log('Minimo = ' + min.key + ' Maximo = ' + max.key);
+//# sourceMappingURL=app.5.js.map
