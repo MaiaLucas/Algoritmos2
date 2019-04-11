@@ -16,11 +16,6 @@ keys.forEach(function (key) {
   return tree.otherAdd(key);
 });
 
-tree.preOrder(_transversalOperations.printMenuKey);
+tree.preOrder(_transversalOperations.printMenuKeyHeight);
 console.log('---------');
-tree.remove(13);
-tree.preOrder(_transversalOperations.printMenuKey);
-console.log('---------');
-tree.remove(20);
-tree.preOrder(_transversalOperations.printMenuKey);
 //# sourceMappingURL=app.js.map

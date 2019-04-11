@@ -9,3 +9,11 @@ export const printMenuKey = (node) => {
     }
     console.log(`${pattern}-> ${node.key}`)
 }
+
+export const printMenuKeyHeight = (node) => {
+    let pattern = ""
+    for (let i = 0; i < node.depth(); i++) {
+        pattern += "|  "
+    }
+    console.log(`${pattern}-> ${node.key} (${node.height()})`) 
+}

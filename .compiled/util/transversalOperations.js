@@ -14,4 +14,12 @@ var printMenuKey = exports.printMenuKey = function printMenuKey(node) {
     }
     console.log(pattern + "-> " + node.key);
 };
+
+var printMenuKeyHeight = exports.printMenuKeyHeight = function printMenuKeyHeight(node) {
+    var pattern = "";
+    for (var i = 0; i < node.depth(); i++) {
+        pattern += "|  ";
+    }
+    console.log(pattern + "-> " + node.key + " (" + node.height() + ")");
+};
 //# sourceMappingURL=transversalOperations.js.map

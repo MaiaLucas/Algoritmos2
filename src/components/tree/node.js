@@ -38,4 +38,15 @@ export default class Node {
         if(this.isRoot()) return 0
         return 1 + this.parent.depth()
     }
+
+    height() {
+        if( this.isLeaf() ) return 0;
+        if( this.hasBothChildren() ) {
+            return 1 + Math.max( this.leftChild.height(), this.rightChild.height() )
+        } else {
+            if( this.hasLeftChild() ) return 1 + this.leftChild.height();
+            else return 1 + this.rightChild.height();
+        }
+    }
+
 }
