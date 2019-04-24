@@ -38,7 +38,7 @@ var Edge = function () {
     }, {
         key: 'oppsite',
         value: function oppsite(v) {
-            if (v == this.origin) return this.destiny;else return this.origin;
+            if (v == this.destiny) return this.origin;else return this.destiny;
         }
     }]);
 
