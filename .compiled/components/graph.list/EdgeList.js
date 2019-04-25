@@ -15,30 +15,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Edge = function () {
-    function Edge(origin, destiny) {
-        var weight = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    function Edge(origin, destination) {
+        var element = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
         _classCallCheck(this, Edge);
 
-        this.origin = origin;
-        this.destiny = destiny;
-        this.weight = weight;
+        this._origin = origin;
+        this._destination = destination;
+        this._element = element;
     }
 
     _createClass(Edge, [{
-        key: 'element',
-        value: function element() {
-            return this.weight;
-        }
-    }, {
         key: 'endPoints',
         value: function endPoints() {
-            return [this.origin, this.destiny];
+            return [this._origin, this._destination];
         }
     }, {
-        key: 'oppsite',
-        value: function oppsite(v) {
-            if (v == this.destiny) return this.origin;else return this.destiny;
+        key: 'opposite',
+        value: function opposite(v) {
+            return v === this._destination ? this._origin : this._destination;
+        }
+    }, {
+        key: 'element',
+        get: function get() {
+            return this._element;
         }
     }]);
 

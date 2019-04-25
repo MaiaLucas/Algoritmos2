@@ -1,4 +1,2 @@
-Arvore/node_modules
-Grafo/node_modules
-Grafo/.compile
-Arvore/.compile
+node_modules
+.compile

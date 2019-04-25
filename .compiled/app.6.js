@@ -18,4 +18,4 @@ keys.forEach(function (key) {
 
 tree.preOrder(_transversalOperations.printMenuKeyHeight);
 console.log('---------');
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=app.6.js.map
