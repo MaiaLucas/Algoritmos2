@@ -1,23 +1,90 @@
 import Graph from './components/graph.list/GraphList'
 import Vertex from './components/graph.list/VertexList'
+import Edge from './components/graph.list/EdgeList'
 
-let graph = new Graph()
+// Vextexes
+let v = new Vertex('v')
+let u = new Vertex('u')
+let w = new Vertex('w')
+let z = new Vertex('z')
 
-let v0 = graph.addVertex("v0")
-let v1 = graph.addVertex("v1")
-let v2 = graph.addVertex("v2")
-let v3 = graph.addVertex("v3")
-let v4 = graph.addVertex("v4")
-let v5 = graph.addVertex("v5")
+//Edges
+let e = new Edge(v, u)
+let g = new Edge(u, w)
+let f = new Edge(v, w)
+let i = new Edge(w, z)
 
-let e1 = graph.addEdge(v0, v1)
-let e2 = graph.addEdge(v1, v2)
-let e3 = graph.addEdge(v2, v3)
-let e4 = graph.addEdge(v3, v4)
-let e5 = graph.addEdge(v4, v0)
-let e6 = graph.addEdge(v0, v5)
-let e7 = graph.addEdge(v2, v5)
-let e8 = graph.addEdge(v3, v5)
-let e9 = graph.addEdge(v4, v5)
+//LISTA DE ADJACENCIAS
+//Mapa
+let outcoming = new Map()
+outcoming.set(u, [])
+outcoming.set(v, [])
+outcoming.set(w, [])
+outcoming.set(z, [])
 
-console.log()
+outcoming.get(u).push(e, g)
+outcoming.get(v).push(e, f)
+outcoming.get(w).push(f, g, i)
+outcoming.get(z).push(i)
+
+// console.log(outcoming.get(u))
+
+//Dicionario
+let outcoming2 = {}
+
+outcoming2[u] = []
+outcoming2[v] = []
+outcoming2[w] = []
+outcoming2[z] = []
+
+outcoming2[u].push(e, g)
+outcoming2[v].push(e, f)
+outcoming2[w].push(f, g, i)
+outcoming2[z].push(i)
+
+// console.log(outcoming2)
+
+//MAPA DE ADJACENCIAS
+//Mapa
+let outcoming3 = new Map()
+
+outcoming3.set(u, new Map())
+outcoming3.set(v, new Map())
+outcoming3.set(w, new Map())
+outcoming3.set(z, new Map())
+
+outcoming3.get(u).set(v, e)
+outcoming3.get(u).set(w, g)
+
+outcoming3.get(v).set(u, e)
+outcoming3.get(v).set(w, f)
+
+outcoming3.get(w).set(u, g)
+outcoming3.get(w).set(v, f)
+outcoming3.get(w).set(z, i)
+
+outcoming3.get(z).set(w, i)
+
+// console.log(outcoming3)
+
+//Dicionario
+let outcoming4 = {}
+
+outcoming4[u] = {}
+outcoming4[v] = {}
+outcoming4[w] = {}
+outcoming4[z] = {}
+
+outcoming4[u][v] = e
+outcoming4[u][w] = g
+
+outcoming4[v][u] = e
+outcoming4[v][w] = f
+
+outcoming4[w][v] = f
+outcoming4[w][u] = g
+outcoming4[w][z] = i
+
+outcoming4[z][w] = i
+
+console.log(outcoming4)
