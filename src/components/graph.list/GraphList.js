@@ -8,7 +8,7 @@ export default class Graph {
 
     addVertex(key) { // IGUAL
         let vertex = new Vertex(key)
-        this.vertexes.push(vertex)
+        this.verteces.push(vertex)
 
         return vertex
     }
@@ -28,6 +28,6 @@ export default class Graph {
 
     adjacencyList() {
 
-        this._vertexes.forEach( vertex => console.log(vertex.adjacencyList()) )
+        this._verteces.forEach( vertex => console.log(vertex.adjacencyList()) )
     }
 }
