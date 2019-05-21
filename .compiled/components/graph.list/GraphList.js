@@ -52,13 +52,11 @@ var Graph = function () {
 
     }, {
         key: 'adjacencyList',
-        value: function adjacencyList(key) {
+        value: function adjacencyList() {
 
-            // for( let i = 0; i < this.vertexes; i++ ) {
-
-            // }
-
-            console.log(this.vertexes);
+            this._vertexes.forEach(function (vertex) {
+                return console.log(vertex.adjacencyList());
+            });
         }
     }]);
 

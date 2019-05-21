@@ -24,7 +24,22 @@ var Vertex = function () {
         }
     }, {
         key: "adjacencyList",
-        value: function adjacencyList() {}
+        value: function adjacencyList() {
+            var _this = this;
+
+            var list = "" + this;
+
+            this._outcoming.forEach(function (edge) {
+                return list += " -> " + edge.opposite(_this);
+            });
+
+            return list;
+        }
+    }, {
+        key: "toString",
+        value: function toString() {
+            return this._element;
+        }
     }, {
         key: "element",
         get: function get() {
