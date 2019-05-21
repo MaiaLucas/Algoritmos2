@@ -26,12 +26,8 @@ export default class Graph {
     // Contém um vértice e as arestas que o ligam
     //Pegar um vértice junto com todas as suas arestas e imprime
 
-    adjacencyList(key) {
+    adjacencyList() {
 
-        // for( let i = 0; i < this.vertexes; i++ ) {
-
-        // }
-
-        console.log(this.vertexes)
+        this._vertexes.forEach( vertex => console.log(vertex.adjacencyList()) )
     }
 }

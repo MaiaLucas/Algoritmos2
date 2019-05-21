@@ -14,7 +14,15 @@ class Vertex {
     }
 
     adjacencyList() {
-        
+        let list = "" + this
+
+        this._outcoming.forEach( edge => list += ` -> ${edge.opposite(this)}`)
+
+        return list
+    }
+
+    toString() {
+        return this._element
     }
 }
 
