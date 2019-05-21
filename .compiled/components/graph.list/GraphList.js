@@ -30,7 +30,7 @@ var Graph = function () {
         value: function addVertex(key) {
             // IGUAL
             var vertex = new _VertexList2.default(key);
-            this.vertexes.push(vertex);
+            this.verteces.push(vertex);
 
             return vertex;
         }
@@ -54,7 +54,7 @@ var Graph = function () {
         key: 'adjacencyList',
         value: function adjacencyList() {
 
-            this._vertexes.forEach(function (vertex) {
+            this._verteces.forEach(function (vertex) {
                 return console.log(vertex.adjacencyList());
             });
         }
