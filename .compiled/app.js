@@ -1,12 +1,12 @@
 'use strict';
 
-var _GraphListMap = require('./components/graph.list.map/GraphListMap');
+var _GraphMap = require('./components/graph.map/GraphMap');
 
-var _GraphListMap2 = _interopRequireDefault(_GraphListMap);
+var _GraphMap2 = _interopRequireDefault(_GraphMap);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var graph = new _GraphListMap2.default();
+var graph = new _GraphMap2.default();
 
 // Vextexes
 var v = graph.addVertex('v');
@@ -20,7 +20,7 @@ var g = graph.addEdge(u, w, "g");
 var f = graph.addEdge(v, w, "f");
 var i = graph.addEdge(w, z, "i");
 
-console.log(graph);
+// console.log(graph)
 
 var edges = graph.incidentEdge(w);
 
