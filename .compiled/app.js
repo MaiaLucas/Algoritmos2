@@ -6,6 +6,8 @@ var _GraphMap2 = _interopRequireDefault(_GraphMap);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import Graph from './components/graph.list.map/GraphListMap';
+
 var graph = new _GraphMap2.default();
 
 // Vextexes
