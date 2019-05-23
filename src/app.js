@@ -1,5 +1,6 @@
-import Graph from './components/graph.map/GraphMap';
-// import Graph from './components/graph.list.map/GraphListMap';
+// import Graph from './components/graph.map/GraphMap';
+import Graph from './components/graph.list.map/GraphListMap';
+import { DFS } from './util/graphOpration';
 
 let graph = new Graph()
 
@@ -16,7 +17,8 @@ let f = graph.addEdge(v, w, "f")
 let i = graph.addEdge(w, z, "i")
 
 // console.log(graph)
+let resultDFS = new Map()
+resultDFS.set(v, null)
+DFS(graph, v, resultDFS )
 
-let edges = graph.incidentEdge(w)
-
-console.log(edges)
+console.log(resultDFS)
