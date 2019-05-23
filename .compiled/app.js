@@ -1,14 +1,15 @@
 'use strict';
 
-var _GraphMap = require('./components/graph.map/GraphMap');
+var _GraphListMap = require('./components/graph.list.map/GraphListMap');
 
-var _GraphMap2 = _interopRequireDefault(_GraphMap);
+var _GraphListMap2 = _interopRequireDefault(_GraphListMap);
+
+var _graphOpration = require('./util/graphOpration');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Graph from './components/graph.list.map/GraphListMap';
-
-var graph = new _GraphMap2.default();
+// import Graph from './components/graph.map/GraphMap';
+var graph = new _GraphListMap2.default();
 
 // Vextexes
 var v = graph.addVertex('v');
@@ -23,8 +24,9 @@ var f = graph.addEdge(v, w, "f");
 var i = graph.addEdge(w, z, "i");
 
 // console.log(graph)
+var resultDFS = new Map();
+resultDFS.set(v, null);
+(0, _graphOpration.DFS)(graph, v, resultDFS);
 
-var edges = graph.incidentEdge(w);
-
-console.log(edges);
+console.log(resultDFS);
 //# sourceMappingURL=app.js.map
