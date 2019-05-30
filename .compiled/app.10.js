@@ -24,13 +24,9 @@ var f = graph.addEdge(v, w, "f");
 var i = graph.addEdge(w, z, "i");
 
 // console.log(graph)
-var discovered = new Map();
-discovered.set(v, null);
-(0, _graphOpration.DFS)(graph, v, discovered);
+var resultDFS = new Map();
+resultDFS.set(v, null);
+(0, _graphOpration.DFS)(graph, v, resultDFS);
 
-// console.log(discovered)
-
-var path = (0, _graphOpration.constructPath)(v, z, discovered);
-
-console.log(path);
-//# sourceMappingURL=app.js.map
+console.log(resultDFS);
+//# sourceMappingURL=app.10.js.map

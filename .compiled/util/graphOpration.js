@@ -14,4 +14,25 @@ var DFS = exports.DFS = function DFS(graph, vertex, discovered) {
         }
     });
 };
+
+var constructPath = exports.constructPath = function constructPath(origin, destination, discovered) {
+    var path = [];
+
+    if (discovered.has(destination)) {
+        var step = destination;
+        path.push(step);
+
+        while (step !== origin) {
+            var edge = discovered.get(step);
+            var opposite = edge.opposite(step);
+            path.push(opposite);
+
+            step = opposite;
+        }
+
+        path.reverse();
+    }
+
+    return path;
+};
 //# sourceMappingURL=graphOpration.js.map
