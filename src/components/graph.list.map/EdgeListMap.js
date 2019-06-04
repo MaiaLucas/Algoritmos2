@@ -1,5 +1,3 @@
-import Vertex from './VertexListMap'
-
 export default class Edge {
 
     constructor(origin, destination, element = null){
