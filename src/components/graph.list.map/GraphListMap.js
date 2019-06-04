@@ -22,7 +22,7 @@ export default class Graph {
     }
 
     addEdge(origin, destination, element = null) { 
-        let edge = new Edge(origin, destination)
+        let edge = new Edge(origin, destination, element)
 
         this._outgoing.get(origin).push(edge)
         
