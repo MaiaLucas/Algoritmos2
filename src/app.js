@@ -1,6 +1,6 @@
 // import Graph from './components/graph.map/GraphMap';
 import Graph from './components/graph.list.map/GraphListMap';
-import { DFS, constructPath } from './util/graphOpration';
+import { DFS, constructPath, BFS } from './util/graphOpration';
 
 let graph = new Graph()
 
@@ -19,10 +19,11 @@ let i = graph.addEdge(w, z, "i")
 // console.log(graph)
 let discovered = new Map()
 discovered.set(v, null)
-DFS(graph, v, discovered )
+// DFS(graph, v, discovered)
+BFS(graph, v, discovered)
 
 // console.log(discovered)
 
 let path = constructPath(v, z, discovered)
 
-console.log(path)
+console.log(discovered)
