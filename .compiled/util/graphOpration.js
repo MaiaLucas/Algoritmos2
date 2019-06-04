@@ -25,14 +25,33 @@ var constructPath = exports.constructPath = function constructPath(origin, desti
         while (step !== origin) {
             var edge = discovered.get(step);
             var opposite = edge.opposite(step);
-            path.push(opposite);
+            path.unshift(opposite);
 
             step = opposite;
         }
-
-        path.reverse();
     }
 
     return path;
+};
+
+var BFS = exports.BFS = function BFS(graph, vertex, discovered) {
+    var queue = [vertex];
+
+    var _loop = function _loop() {
+        var currentVertex = queue.shift();
+
+        graph.incidentEdge(currentVertex).forEach(function (edge) {
+            var opposite = edge.opposite(currentVertex);
+
+            if (!discovered.has(opposite)) {
+                discovered.set(opposite, edge);
+                queue.push(opposite);
+            }
+        });
+    };
+
+    while (queue.length > 0) {
+        _loop();
+    }
 };
 //# sourceMappingURL=graphOpration.js.map

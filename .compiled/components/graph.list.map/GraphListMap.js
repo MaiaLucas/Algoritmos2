@@ -49,7 +49,7 @@ var Graph = function () {
         value: function addEdge(origin, destination) {
             var element = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
 
-            var edge = new _EdgeListMap2.default(origin, destination);
+            var edge = new _EdgeListMap2.default(origin, destination, element);
 
             this._outgoing.get(origin).push(edge);
 
