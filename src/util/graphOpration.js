@@ -6,7 +6,7 @@ export const DFS = (graph, vertex, discovered) => { //Busca em profundidade
             discovered.set(opposite, edge)
             DFS(graph, opposite, discovered)
         }
-    } );
+    } )
 }
 
 export const constructPath = (origin, destination, discovered) => {
@@ -19,13 +19,27 @@ export const constructPath = (origin, destination, discovered) => {
         while( step !== origin ) {
             let edge = discovered.get(step)
             let opposite = edge.opposite(step)
-            path.push(opposite)
+            path.unshift(opposite)
 
             step = opposite
         }
-
-        path.reverse()
     }
 
     return path
+}
+
+export const BFS = (graph, vertex, discovered) => {
+    let queue = [vertex]
+    while( queue.length > 0 ) {
+        let currentVertex = queue.shift()
+        
+        graph.incidentEdge(currentVertex).forEach( edge => {
+            let opposite = edge.opposite(currentVertex)
+
+            if( !discovered.has(opposite) ) {
+                discovered.set(opposite, edge)
+                queue.push(opposite)
+            }
+        } )
+    }
 }
