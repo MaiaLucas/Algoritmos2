@@ -94,5 +94,14 @@ var BFS = exports.BFS = function BFS(graph, vertex, discovered) {
 /**
  * Não pode adicionar nenhuma propriedade ao Vertex e ao Edge (usar o que já tem)
  * Criar uma estimativa, como nos métodos acima
+ * Number.POSITIVE_INFINITE
+ * 
+ * Configuração:
+ * - Mapa de vértices abertos
+ * - Vértice inicial é configurado com 0
+ * - Enquanto tiver vértices abertos
+ * - Escolhe o vértice aberto de menor estimativa e fecha (não pode ser mais modificado)
+ * - Percorre todas as arestas incidentes e abertas do atual
+ * - 
  */
 //# sourceMappingURL=graphOpration.js.map
