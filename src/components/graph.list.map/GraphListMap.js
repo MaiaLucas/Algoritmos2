@@ -43,4 +43,27 @@ export default class Graph {
 
         this._verteces.forEach( vertex => console.log(vertex.adjacencyList()) )
     }
+
+    isDirected() {
+        return this._directed
+    }
+
+    vertexCount() {
+        //return the number of vertices in the graph
+    }
+
+    vertices() {
+        //return an iterator of all vertices in the graph
+        return this._outgoing.keys()
+    }
+
+    edgeCount() {
+        //return the number of edges in the graph
+
+        //for undirected graphs, make sure not to double-count edges
+    }
+
+    edges() {
+        //return an iterator of all edges of the graph
+    }
 }
