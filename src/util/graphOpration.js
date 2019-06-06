@@ -1,4 +1,5 @@
-export const DFS = (graph, vertex, discovered) => { //Busca em profundidade 
+//Busca em Profundidade
+export const DFS = (graph, vertex, discovered) => { 
     graph.incidentEdge(vertex).forEach( edge => {
         let opposite = edge.opposite(vertex)
 
@@ -7,6 +8,19 @@ export const DFS = (graph, vertex, discovered) => { //Busca em profundidade
             DFS(graph, opposite, discovered)
         }
     } )
+}
+
+//Busca em Profundidade Completo
+export const DFS_complete = (graph) => {
+    let forest = new Map()
+    for( let vertex of graph.vertices() ) {
+        if( !forest.has(vertex) ) {
+            forest.set(vertex, null)
+            DFS(graph, vertex, forest)
+        }
+    }
+
+    return forest
 }
 
 export const constructPath = (origin, destination, discovered) => {
@@ -28,6 +42,7 @@ export const constructPath = (origin, destination, discovered) => {
     return path
 }
 
+//Busca em Largura - sem nível
 export const BFS = (graph, vertex, discovered) => {
     let queue = [vertex]
     while( queue.length > 0 ) {
@@ -43,3 +58,9 @@ export const BFS = (graph, vertex, discovered) => {
         } )
     }
 }
+
+//TRABALHO Dijkstra 1.5 pts
+/**
+ * Não pode adicionar nenhuma propriedade ao Vertex e ao Edge (usar o que já tem)
+ * Criar uma estimativa, como nos métodos acima
+ */
