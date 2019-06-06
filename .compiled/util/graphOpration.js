@@ -27,6 +27,7 @@ var DFS_complete = exports.DFS_complete = function DFS_complete(graph) {
             var vertex = _step.value;
 
             if (!forest.has(vertex)) {
+                forest.set(vertex, null);
                 DFS(graph, vertex, forest);
             }
         }
