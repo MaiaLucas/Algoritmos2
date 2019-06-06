@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import Graph from './components/graph.map/GraphMap';
 var graph = new _GraphListMap2.default();
 
-// Vextexes
+// Verteces
 var v = graph.addVertex('v');
 var u = graph.addVertex('u');
 var w = graph.addVertex('w');
@@ -23,15 +23,22 @@ var g = graph.addEdge(u, w, "g");
 var f = graph.addEdge(v, w, "f");
 var i = graph.addEdge(w, z, "i");
 
-// console.log(graph)
-var discovered = new Map();
-discovered.set(v, null);
-// DFS(graph, v, discovered)
-(0, _graphOpration.BFS)(graph, v, discovered);
+//Graph 2
+//Verteces
+var x = graph.addVertex("x");
+var y = graph.addVertex("y");
+var t = graph.addVertex("t");
 
-// console.log(discovered)
+//Edges
+var a = graph.addEdge(x, y, "a");
+var b = graph.addEdge(y, t, "b");
+var c = graph.addEdge(t, x, "c");
 
-var path = (0, _graphOpration.constructPath)(v, z, discovered);
+// let vertices = graph.vertices()
 
-console.log(discovered);
+// for( let vertex of vertices ) {
+//     console.log(vertex.element);
+// }
+
+console.log((0, _graphOpration.DFS_complete)(graph));
 //# sourceMappingURL=app.js.map

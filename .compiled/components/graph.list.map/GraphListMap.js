@@ -74,6 +74,34 @@ var Graph = function () {
                 return console.log(vertex.adjacencyList());
             });
         }
+    }, {
+        key: 'isDirected',
+        value: function isDirected() {
+            return this._directed;
+        }
+    }, {
+        key: 'vertexCount',
+        value: function vertexCount() {
+            //return the number of vertices in the graph
+        }
+    }, {
+        key: 'vertices',
+        value: function vertices() {
+            //return an iterator of all vertices in the graph
+            return this._outgoing.keys();
+        }
+    }, {
+        key: 'edgeCount',
+        value: function edgeCount() {
+            //return the number of edges in the graph
+
+            //for undirected graphs, make sure not to double-count edges
+        }
+    }, {
+        key: 'edges',
+        value: function edges() {
+            //return an iterator of all edges of the graph
+        }
     }]);
 
     return Graph;
