@@ -11,6 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import Graph from './components/graph.map/GraphMap';
 var graph = new _GraphListMap2.default();
 
+// Sub-Graph 1
 // Verteces
 var v = graph.addVertex('v');
 var u = graph.addVertex('u');
@@ -23,7 +24,7 @@ var g = graph.addEdge(u, w, "g");
 var f = graph.addEdge(v, w, "f");
 var i = graph.addEdge(w, z, "i");
 
-//Graph 2
+// Sub-Graph 2
 //Verteces
 var x = graph.addVertex("x");
 var y = graph.addVertex("y");
@@ -40,5 +41,10 @@ var c = graph.addEdge(t, x, "c");
 //     console.log(vertex.element);
 // }
 
-console.log((0, _graphOpration.DFS_complete)(graph));
+var forest = (0, _graphOpration.DFS_complete)(graph);
+console.log(forest);
+
+var path = (0, _graphOpration.constructPath)(v, x, forest); // Erro : edges = edge.opposite(vertex) caminho para arvores não conectadas 
+
+console.log(path);
 //# sourceMappingURL=app.js.map
